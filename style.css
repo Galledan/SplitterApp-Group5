@@ -1,0 +1,225 @@
+:root {
+  /* Primary */
+
+  --Strong-cyan: hsl(172, 67%, 45%);
+  --Strong-cyan-hover: hsl(172, 61%, 77%);
+
+  /* Neutral */
+
+  --Very-dark-cyan: hsl(183, 100%, 15%);
+  --Dark-grayish-cyan: hsl(186, 14%, 43%);
+  --Grayish-cyan: #7f9c9f;
+  --Light-grayish-cyan: #c5e4e7;
+  --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --White: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  background-color: var(--Light-grayish-cyan);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  gap: 5.5rem;
+}
+
+main {
+  background-color: var(--White);
+  box-shadow: 0px 32px 43px 0px rgba(79, 166, 175, 0.2);
+  border-radius: 25px;
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  max-width: 920px;
+  padding: 2rem;
+}
+
+/* FORM CONTAINER */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 1rem;
+    row-gap: 2.5rem;
+}
+
+.form-field label {
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color: var(--Dark-grayish-cyan);
+  margin-bottom: .37rem;
+}
+
+.form-field input {
+    width: 100%;
+    height: 48px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--Very-light-grayish-cyan);
+    outline: none;
+    font-family: inherit;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: right;
+    color: var(--Very-dark-cyan);
+    padding: 0.5rem 1rem;
+}
+.form-field input:active, .form-field input:focus {
+    outline: 2px solid var(--Strong-cyan);
+}
+
+.tip-container h6 {
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.5rem;
+    color: var(--Dark-grayish-cyan);
+}
+
+.btn-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 14px;
+    row-gap: 1rem;
+}
+
+.tip-btn {
+    cursor: pointer;
+    background: var(--Very-dark-cyan);
+    color: var(--White);
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: inherit;
+    border: none;
+    border-radius: 5px;
+    padding: .5rem 1rem;
+}
+
+.tip-btn:active, .tip-btn:hover {
+    background: var(--Strong-cyan);
+    color: var(--Very-dark-cyan);
+}
+
+.tip-input {
+    background: var( --Very-light-grayish-cyan);
+    border: none;
+    font-family: inherit;
+    text-align: center;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    width: 100%;
+    padding: 0.5rem 0.5rem;
+}
+
+.tip-input:active, .tip-input:focus {
+    outline: 2px solid var(--Strong-cyan);
+    text-align: right;
+    color: var(--Very-dark-cyan);
+}
+
+
+/* RESULT CONTAINER */
+.result-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border-radius: 15px;
+    background-color: var(--Very-dark-cyan);
+    row-gap: 1.5rem;
+    border: none;
+    padding: 2.5rem;
+  }
+
+.result-container .result-row {
+    display: flex;
+    justify-content: space-between;
+    color: var( --Strong-cyan);
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.tip-title p.title {
+    color: var( --White);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.tip-title p:not(.title) {
+    color: Var( --Grayish-cyan);
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.result-btn {
+    background: var( --Strong-cyan);
+    color: var( --Very-dark-cyan);
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 0.5rem 2.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-family: inherit;
+    text-align:center;
+    outline: none;
+    border: none;
+    margin-top: auto;
+}
+
+.result-btn:hover {
+    background: var(--Strong-cyan-hover);
+}
+
+
+.input-container {
+    position: relative;
+}
+
+.input-container > img {
+    position: absolute;
+    top: 50%;
+    left: 1.25rem;
+    transform: translateY(-50%);
+}
+
+.input-container input::placeholder {
+    color: var(--Dark-grayish-cyan)
+}
+
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 0;
+        gap: 2.5rem
+    }
+
+    main {
+        flex-direction: column;
+        max-width: 767px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    body > img {
+        margin-top: 2.5rem;
+    }
+
+    .btn-group {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .result-container .result-row {
+        font-size: 2rem;
+    }
+}
